@@ -57,7 +57,9 @@ export const AuthProvider = ({ children }) => {
       return;
     }
 
-    const socketUrl = `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}/ws`;
+    const socketUrl = import.meta.env.DEV
+      ? `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}/ws`
+      : 'wss://campus-resell.onrender.com/ws';
     
     const client = new Client({
       brokerURL: socketUrl,

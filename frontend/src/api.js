@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '', // Blank baseURL resolves relative to current origin, which matches Vite's proxy configs
+  baseURL: import.meta.env.DEV ? '' : 'https://campus-resell.onrender.com',
   headers: {
     'Content-Type': 'application/json',
   },
