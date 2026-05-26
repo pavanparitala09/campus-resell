@@ -1,0 +1,33 @@
+# Environment secrets (CRITICAL)
+.env
+.env.local
+.env.*.local
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Package manager lock files (optional, but keep envs and logs ignored)
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Subfolders build and dependency fallbacks (just in case of root imports)
+node_modules/
+dist/
+build/
+out/
+bin/
+.gradle/
+.h2/

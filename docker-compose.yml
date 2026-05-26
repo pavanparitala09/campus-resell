@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: campus-resell-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=campus_resell
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - resell-network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: campus-resell-pgadmin
+    ports:
+      - "5050:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    networks:
+      - resell-network
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
+
+networks:
+  resell-network:
+    driver: bridge
