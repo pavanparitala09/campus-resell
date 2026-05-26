@@ -14,7 +14,7 @@ public class RegisterRequest {
 
     @NotBlank(message = "Email is required")
     @Email(message = "Invalid email format")
-    @Pattern(regexp = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.edu$", message = "Only college email addresses (.edu) are allowed")
+    @Pattern(regexp = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.edu\\.in$", message = "Only college email addresses (.edu.in) are allowed")
     private String collegeEmail;
 
     @NotBlank(message = "Password is required")
